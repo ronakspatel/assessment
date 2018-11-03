@@ -7,11 +7,14 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeService } from './employee.service';
 
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
+
 @NgModule({
   imports: [
     CommonModule,
     EmployeeRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMyDatePickerModule.forRoot()
   ],
   declarations: [AddEmployeeComponent, EmployeeListComponent],
   providers:[EmployeeService]

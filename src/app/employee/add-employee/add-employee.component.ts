@@ -14,11 +14,11 @@ export class AddEmployeeComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService, private fb: FormBuilder) {
     this.designation = ["Chief Executive Officer",
-    "Chief Operating Officer",
-    "Chief Financial Officer",
-    " Chief Technology Officer",
-    " Chief Marketing Officer",
-    " Chief Legal Officer"];
+      "Chief Operating Officer",
+      "Chief Financial Officer",
+      " Chief Technology Officer",
+      " Chief Marketing Officer",
+      " Chief Legal Officer"];
   }
   //create formGroup and formcontrol
   fromControl = this.fb.group({
@@ -31,11 +31,34 @@ export class AddEmployeeComponent implements OnInit {
   ngOnInit() {
   }
   // create method using employee param to pass data to over employeeservice
+  
   onSubmit(employee: EmployeeModel): void {
+    debugger;
     console.log(employee);
 
     this.employeeService.addEmployee(employee).subscribe(employee => this.employee = employee);
     alert('employee add successfuly')
   }
+  setDate(): void {
+    // Set today date using the patchValue function
+    let date = new Date();
+    
+    this.fromControl.patchValue({
+      joiningDate: {
+        date: {
+          year: date.getFullYear(),
+          month: date.getMonth() + 1,
+          day: date.getDate()
+        }
+      }
+    });
+    
+  }
 
+  clearDate(): void {
+    // Clear the date using the patchValue function
+    this.fromControl.patchValue({ joiningDate: null });
+  }
 }
+
+

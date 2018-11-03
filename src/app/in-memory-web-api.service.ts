@@ -8,8 +8,8 @@ export class InMemoryWebApiService implements InMemoryDbService {
   createDb() {
     //craete array type employeemodel
     const employees: EmployeeModel[] =[ 
-      {id : 1, name: 'Rahul', age: 27,designation:'Chief Executive Officer',joiningDate:new Date('2020-10-10')},
-      {id : 2, name: 'Ronak', age: 22,designation:'Chief Executive Officer',joiningDate:new Date('2018-09-12')}
+      {id : 1, name: 'Rahul', age: 27,designation:'Chief Executive Officer',joiningDate:'2020-10-10'},
+      {id : 2, name: 'Ronak', age: 22,designation:'Chief Executive Officer',joiningDate:'2018-09-12'}
   ]
 
     return { employees }

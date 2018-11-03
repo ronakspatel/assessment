@@ -2,6 +2,8 @@
 
 
   NAME:<input type="text" formControlName='name' placeholder="Enter Name"><br>
+
+  
   
   
   AGE:<input type="number" formControlName='age' placeholder="Enter Age"><br>
@@ -12,7 +14,24 @@
     <option *ngFor='let d of designation' value="{{d}}">{{d}}</option>
 </select><br>
 
-JOININGDATE:<input type="date" formControlName='joiningDate'><br>
+JOININGDATE:
+<!-- <input type="date" formControlName='joiningDate'><br> -->
+
+<div class="input-group">
+    <input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="joiningDate"
+           formControlName="joiningDate" [options]="myOptions" #dp="ngx-mydatepicker" (click)="dp.toggleCalendar()"/>
+
+    <!-- <span class="input-group-btn">
+        <button type="button" class="btn btn-default" (click)="dp.clearDate()">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>
+        <button type="button" class="btn btn-default" (click)="dp.toggleCalendar()">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+    </span> -->
+</div>
+
   <!-- <input type="submit" [disabled]="!fromControl.valid"> -->
   <button type="submit" [disabled]="!fromControl.valid" (click)='onSubmit(fromControl.value)'> AddEmployee</button>
+  
 </form>

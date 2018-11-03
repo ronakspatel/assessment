@@ -9,6 +9,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryWebApiService } from './in-memory-web-api.service';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -17,6 +19,7 @@ import { InMemoryWebApiService } from './in-memory-web-api.service';
     BrowserModule,AppRoutingModule,
     CoreModule,HttpClientInMemoryWebApiModule
     .forRoot(InMemoryWebApiService)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiService } from './in-memory-web-api.service';
 
 
 @NgModule({
@@ -10,7 +14,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,AppRoutingModule,
+    CoreModule,HttpClientInMemoryWebApiModule
+    .forRoot(InMemoryWebApiService)
   ],
   providers: [],
   bootstrap: [AppComponent]

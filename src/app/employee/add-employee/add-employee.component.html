@@ -1,0 +1,18 @@
+<form [formGroup]='fromControl' (onSubmit)="onSubmit(fromControl.value)" id='msform'>
+
+
+  NAME:<input type="text" formControlName='name' placeholder="Enter Name"><br>
+  
+  
+  AGE:<input type="number" formControlName='age' placeholder="Enter Age"><br>
+  <!-- AGE:<input type="text" formControlName='designation' placeholder="Enter Age" ><br> -->
+  
+  DESIGNATION:<select formControlName='designation'>
+    <option value='' selected disabled>Enter Designation</option>
+    <option *ngFor='let d of designation' value="{{d}}">{{d}}</option>
+</select><br>
+
+JOININGDATE:<input type="date" formControlName='joiningDate'><br>
+  <!-- <input type="submit" [disabled]="!fromControl.valid"> -->
+  <button type="submit" [disabled]="!fromControl.valid" (click)='onSubmit(fromControl.value)'> AddEmployee</button>
+</form>

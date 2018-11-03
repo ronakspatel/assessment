@@ -1,0 +1,22 @@
+<!-- <div *ngFor='let employee of employees'><p>{{employee|json}}</p></div> -->
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>DESIGNATION</th>
+    <th>JOININGDATE</th>
+    <th>ACTION</th>
+  </tr>
+  <tr *ngFor='let employee of employees'>
+    <td>{{employee.id}}</td>
+    <td>{{employee.name | uppercase }}</td>
+    <td>{{employee.age}}</td>
+    <td>{{employee.designation | uppercase}}</td>
+    <td>{{employee.joiningDate | date: 'dd-MM-yyyy'}}</td>
+    <td><button (click)=deleteEmployee(employee.id)>DELETE</button></td>
+
+  </tr>
+
+</table>

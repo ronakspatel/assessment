@@ -15,7 +15,7 @@
     <td>{{employee.name | uppercase }}</td>
     <td>{{employee.age}}</td>
     <td>{{employee.designation | uppercase}}</td>
-    <td>{{employee.joiningDate }}</td>
+    <td>{{employee.joiningDate | date}}</td>
     <!-- <td>{{employee.joiningDate }}</td> -->
     <td><button (click)=deleteEmployee(employee.id)>DELETE</button></td>
 

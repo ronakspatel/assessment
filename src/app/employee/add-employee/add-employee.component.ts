@@ -32,33 +32,31 @@ export class AddEmployeeComponent implements OnInit {
   }
   // create method using employee param to pass data to over employeeservice
   
-  onSubmit(employee): void {
-   employee.joiningDate=employee.joiningDate.formatted
-  
-   
-   
-    
-    
+  onSubmit(formData): void {
+    formData.joiningDate=formData.joiningDate.jsdate
+    console.log(formData);
+    //use for transform data to employeeModel type
+   let employee:EmployeeModel=formData;
 
    alert('employee add successfuly')
    
     this.employeeService.addEmployee(employee).subscribe(employee => this.employee = employee);
   }
-  setDate(): void {
-    // Set today date using the patchValue function
-    let date = new Date();
+  // setDate(): void {
+  //   // Set today date using the patchValue function
+  //   let date = new Date();
     
-    this.fromControl.patchValue({
-      joiningDate: {
-        // date: {
-        //   year: date.getFullYear(),
-        //   month: date.getMonth() + 1,
-        //   day: date.getDate()
-        // }
-      }
-    });
+  //   this.fromControl.patchValue({
+  //     joiningDate: {
+  //       date: {
+  //         year: date.getFullYear(),
+  //         month: date.getMonth() + 1,
+  //         day: date.getDate()
+  //       }
+  //     }
+  //   });
     
-  }
+  // }
 
   clearDate(): void {
     // Clear the date using the patchValue function

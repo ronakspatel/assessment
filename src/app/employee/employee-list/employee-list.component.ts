@@ -28,8 +28,8 @@ export class EmployeeListComponent implements OnInit {
   //create method for datele employee using id param
   deleteEmployee(id:number):void{
     this.employeeService.deleteEmployee(id).subscribe();
-    alert('Employee delete successful')
     this.getEmployees();
+    alert('Employee delete successful')
   }
 
 }
